@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>File Size Microservice</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>File Size Microservice</h1>
+            <p>By Joe McIlhargey | <a href="https://github.com/jmcilhargey/filesize-service" target="_blank">GitHub</a></p>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <div class="btn btn-default btn-file">
+                        Browse
+                        <input type="file" onchange="showFile()" id="fileinput" name="upload">
+                        </div> 
+                    </div>
+                    <input type="text" class="form-control" id="fileoutput" readonly>
+                </div>
+                <input type="submit" class="btn btn-default">
+            </form>
+            <div class="help-block">
+                Select a file..
+            </div>
+            <blockquote>
+                <ul>
+                    <li>Select a file using the form upload tool</li>
+                    <li>The service will return the size of the file in bytes</li>
+                    <li>There is a 5 MB limit on uploads</li>
+                </ul>
+            </blockquote>
+            
+            <div class="panel panel-default">
+              <div class="panel-body">
+                File size: 
+              </div>
+            </div>
+            
+            <h3>Example Input</h3>
+            <p>Space X Falcon 9 Payload User's Guide</p>
+            <code>http://www.spacex.com/sites/spacex/files/falcon_9_users_guide_rev_2.0.pdf</code><br>
+            <h3>Example Output</h3>
+            <code>3123233 bytes</code><br>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
